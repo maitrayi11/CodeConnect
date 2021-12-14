@@ -4,7 +4,7 @@ const myPeer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
   port: "443",
-  // config: 
+  // config:
 });
 const myroomid = ROOM_ID;
 const myname = Name;
@@ -14,7 +14,8 @@ myVideodiv.className = "videodiv";
 const mynamediv = document.createElement("div");
 mynamediv.innerHTML = myname;
 myVideodiv.append(mynamediv);
-mynamediv.style.color = "white";
+mynamediv.style.color = "black";
+mynamediv.style.fontWeight = "bold";
 const myVideo = document.createElement("video");
 myVideo.id = "myvideo";
 myVideo.muted = true;
@@ -140,7 +141,7 @@ function connectToNewUser(userId, stream) {
       if (data.name) {
         let namediv = document.createElement("div");
         namediv.innerHTML = data.name;
-        namediv.style.color = "white";
+        namediv.style.color = "black";
         uservideodiv.append(namediv);
       }
       console.log(`${data.userid} user is muted`);
@@ -171,7 +172,8 @@ myPeer.on("connection", function (conn) {
       if (data.name) {
         let namediv = document.createElement("div");
         namediv.innerHTML = data.name;
-        namediv.style.color = "white";
+        namediv.style.color = "black";
+        namediv.style.fontWeight = "bold";
         uservideodiv.append(namediv);
       }
       setvideomutedtext(uservideodiv, data.muted, data.userid);
